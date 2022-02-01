@@ -1,0 +1,116 @@
+@import './imports'
+
+
+*, *::before, *::after
+    margin: 0
+    padding: 0
+    box-sizing: inherit
+
+h1, h2, h3, h4, h5, h6
+    font-family: 'Merriweather Sans', sans-serif
+
+body
+    font-family: 'Open Sans', sans-serif
+    font-size: 100%
+    box-sizing: border-box
+    
+header
+    @include flex(center, space-evenly, column)
+    height: 100vh
+    width: 100%
+    background: $black
+    h1
+        color: $white
+        font-size: 2.75rem
+        color: #d37638
+        user-select: none
+    img
+        background: rgba(248, 234, 33, .2)
+        border-radius: 50%
+        box-shadow: 0 0 40px 20px rgba(248, 234, 33, .2)
+        transition: transform 350ms ease-out, padding 350ms ease-out
+        &:hover
+            background: rgba(248, 234, 33, .4)
+            transform: scale(1.05)
+            // box-shadow: 0 0 40px 20px rgba(248, 234, 33, .6)
+            padding: 1rem
+
+.appear-side
+    opacity: 1 !important
+    transform: translateX(0) !important
+
+.appear
+    opacity: 1 !important
+    transform: translateY(0) !important
+main
+    padding: 8rem 2rem
+    // background: linear-gradient($black 5%, $dark-gray 10%, $white 20%)
+    .info-section
+        @include flex(center, space-around, row)
+        .book
+            min-width: 280px
+            max-width: 400px
+            font-size: 1.25rem
+            text-align: center
+            opacity: 0
+            transform: translateX(-50px);
+            transition: opacity .4s ease-out, transform .4s linear
+            .book-title
+                padding-bottom: 1rem
+        .author
+            @extend .book
+            transform: translateX(50px);
+            .author-title
+                padding-bottom: 1rem
+
+.reasons-card__section
+    margin-top: 4rem
+    h2
+        font-size: 1.75rem
+        opacity: 0
+        transition: opacity .4s ease-in, transform .4s ease-in
+        transform: translateX(25px)
+        &::before
+            content: '🤔'
+            font-size: 2rem
+    .reasons-cards
+        @include flex (center, space-evenly, row)
+        margin-top: 4rem
+        text-align: center
+        .reason-card
+            max-width: 320px
+            padding: 1.5rem 1rem
+            background: $orange
+            opacity: 0
+            transform: translateX(-50px)
+            border-radius: 1rem
+            user-select: none
+            transition: opacity .4s ease-out, transform .4s linear
+            h3
+                font-size: 2rem
+                animation: left-to-right 2s ease-out infinite
+            h4
+                font-size: 1.4rem
+                padding: .75rem 0
+            p
+                font-size: 1.1rem
+        .reason-card:nth-of-type(2)
+            transition: opacity .5s ease-out, transform .5s linear
+            transform: translateX(-100px)
+        .reason-card:last-of-type
+            transition: opacity .6s ease-out, transform .6s linear
+            transform: translateX(-150px)
+// CURIOZITATI DESPRE CARTE, DOAR CA ASTEA VIN DIN DREAPTA SPRE STANGA
+
+
+@keyframes left-to-right 
+    0%
+        transform: rotate(0deg)
+    25%
+        transform: rotate(-35deg)
+    50%
+        transform: rotate(0)
+    75%
+        transform: rotate(35deg)
+    100% 
+        transform: rotate(0)
