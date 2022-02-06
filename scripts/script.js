@@ -18,7 +18,3 @@ fadersRight.forEach(fader => {
 fadersLeft.forEach(fader => {
     sectionObserverSide.observe(fader);
 })
-
-// reasonCards.forEach(card => {
-//     sectionObserverSide.observe(card);
-// })

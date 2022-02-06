@@ -13,11 +13,12 @@ body
     font-family: 'Open Sans', sans-serif
     font-size: 100%
     box-sizing: border-box
+    overflow-x: hidden
     
 header
     @include flex(center, space-evenly, column)
     height: 100vh
-    width: 100%
+    width: calc( 100% + 1rem )
     background: $black
     h1
         color: $white
@@ -26,7 +27,7 @@ header
         user-select: none
     img
         background: rgba(248, 234, 33, .2)
-        border-radius: 50%
+        border-radius: 1rem
         box-shadow: 0 0 40px 20px rgba(248, 234, 33, .2)
         transition: transform 350ms ease-out, padding 350ms ease-out
         &:hover
@@ -43,7 +44,7 @@ header
     opacity: 1 !important
     transform: translateY(0) !important
 main
-    padding: 8rem 2rem
+    padding: 8rem 0
     // background: linear-gradient($black 5%, $dark-gray 10%, $white 20%)
     .info-section
         @include flex(center, space-around, row)
@@ -65,6 +66,7 @@ main
 
 .reasons-card__section
     margin-top: 4rem
+    padding: 0 2rem
     h2
         font-size: 1.75rem
         opacity: 0
@@ -79,6 +81,7 @@ main
         text-align: center
         .reason-card
             max-width: 320px
+            height: 288px
             padding: 1.5rem 1rem
             background: $orange
             opacity: 0
@@ -88,7 +91,7 @@ main
             transition: opacity .4s ease-out, transform .4s linear
             h3
                 font-size: 2rem
-                animation: left-to-right 2s ease-out infinite
+                animation: left-to-right 3s linear infinite
             h4
                 font-size: 1.4rem
                 padding: .75rem 0
@@ -100,8 +103,151 @@ main
         .reason-card:last-of-type
             transition: opacity .6s ease-out, transform .6s linear
             transform: translateX(-150px)
-// CURIOZITATI DESPRE CARTE, DOAR CA ASTEA VIN DIN DREAPTA SPRE STANGA
 
+.curiosity-cards__section
+    margin-top: 4rem
+    padding: 0 2rem
+    h2
+        font-size: 1.75rem
+        opacity: 0
+        transition: opacity .4s ease-in, transform .4s ease-in
+        transform: translateX(25px)
+        &::before
+            content: '🤯'
+            font-size: 2rem
+    .curiosity-cards
+        @include flex (center, space-evenly, row-reverse)
+        margin-top: 4rem
+        text-align: center
+        .curiosity-card
+            max-width: 320px
+            height: 288px
+            padding: 1.5rem 1rem
+            background: darken($orange, 25%)
+            opacity: 0
+            transform: translateX(50px)
+            border-radius: 1rem
+            user-select: none
+            transition: opacity .4s ease-out, transform .4s linear
+            h3
+                font-size: 2rem
+                animation: up-and-down 2s linear infinite
+            h4
+                font-size: 1.4rem
+                padding: .75rem 0
+            p
+                font-size: 1.1rem
+        .curiosity-card:nth-of-type(2)
+            transition: opacity .5s ease-out, transform .5s linear
+            transform: translateX(100px)
+            h3
+                animation: up-and-down 2s linear 1.23s infinite
+        .curiosity-card:last-of-type
+            transition: opacity .6s ease-out, transform .6s linear
+            transform: translateX(150px)
+            h3
+                animation: up-and-down 2s linear 1.64s infinite
+
+.bookshelf
+    position: relative
+    display: flex
+    align-items: flex-end
+    // padding: 0 2rem
+    width: 90%
+    height: 300px
+    margin: 6rem auto
+    background: $woodBrown
+    border: 1.3rem solid $woodFrameBrown
+    border-radius: .2rem
+    box-shadow: 16px 10px 15px 8px rgba(0, 0, 0, .2)
+    user-select: none
+    &:hover #special-book
+        transform: scale(1.1)
+        box-shadow: 0 20px 5px 5px rgba(248, 234, 33, .4)
+        color: $orange
+    .book
+        height: 90%
+        width: 80px
+        background: red
+        margin: 0 .4rem
+        h2
+            white-space: nowrap
+            transform: rotate(0.25turn) translateY(-70px) translateX(10px)
+            transform-origin: 0% 0%
+            font-size: 1.2rem
+            text-align: center
+    .NeuroFitness
+        background: $darkBlue
+        color: $yellow
+        border-left: 4px solid lighten($darkBlue, 10%)
+    .povestea
+        background: $black
+        color: $yellow
+        border-left: 4px solid lighten($black, 20%)
+    .sapiens
+        background: $white
+        color: $black
+        border-left: 4px solid darken($white, 50%)
+    .somn
+        background: $blue
+        color: $white
+        border-left: 4px solid lighten($blue, 20%)
+    #special-book
+        background: $woodFrameBrown
+        color: $black
+        border-left: 4px solid lighten($woodFrameBrown, 10%)
+        box-shadow: 0 20px 5px 5px rgba(248, 234, 33, .2)
+        transition: transform 300ms linear, color 300ms linear
+        cursor: pointer
+    .bogat
+        background: $bej
+        color: $black
+        border-left: 4px solid darken($bej, 10%)
+    .noaptea
+        background: $black
+        color: $red
+        border-left: 4px solid lighten($black, 10%)
+
+.pages-container
+    // display: none
+    display: flex
+    align-items: center
+    justify-content: space-around
+    background: red
+    position: relative
+    width: 100vw
+    height: 100vh
+    top: -100vh
+    left: 0
+    z-index: 100
+    // height: calc(100vh + 100vh + 100vh)
+    // top: calc(-100vh - 100vh)
+    // left: 0
+    // background: rgba(0, 0, 0, .3)
+    .backdrop
+        // display: none
+        position: absolute
+        width: 100%
+        height: calc(100% + 100vh + 100vh)
+        top: -100vh
+        left: 0
+        background: rgba(0, 0, 0, .2)
+        z-index: 99
+    .pages-slider
+        display: flex
+        height: 100%
+        width: 600px
+        overflow: hidden
+        margin: auto
+        .page
+            min-width: 600px
+            height: 100%
+            background: $white
+            border: 1px solid black
+    
+            
+            
+// https://css-tricks.com/almanac/properties/b/border-image/
 
 @keyframes left-to-right 
     0%
@@ -114,3 +260,11 @@ main
         transform: rotate(35deg)
     100% 
         transform: rotate(0)
+
+@keyframes up-and-down
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(-15px)
+    100%
+        transform: translateY(0)
