@@ -43,6 +43,15 @@ header
 .appear
     opacity: 1 !important
     transform: translateY(0) !important
+
+.btn-pushed
+    transform: scale(.9) !important
+
+.text-show
+    transform: scale(1) !important 
+
+.bej
+    background: $bej !important
 main
     padding: 8rem 0
     // background: linear-gradient($black 5%, $dark-gray 10%, $white 20%)
@@ -148,6 +157,48 @@ main
             h3
                 animation: up-and-down 2s linear 1.64s infinite
 
+.quotes-section
+    margin: 6rem 0
+    padding: 0 2rem
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    .quotes-info
+        display: flex
+        align-items: center
+        gap: 2rem
+        user-select: none
+        .info-btn
+            background: $black
+            color: $white
+            padding: .5rem 1rem
+            font-weight: 700
+            border-radius: 50%
+            cursor: pointer
+            transition: transform 100ms linear
+        .info-text
+            padding: .5rem 1rem
+            background: $bej
+            width: 40ch
+            border-radius: .5rem
+            transform-origin: top left
+            transform: scale(0)
+            transition: transform 200ms ease-out
+    .quotes
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        .quote
+            padding: 1rem
+            max-width: 1200px
+            background: lighten($bej, 15%)
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .3)
+            border-radius: .5rem
+            transform: translateX(-100px)
+            opacity: 0
+            cursor: pointer
+            transition: opacity .4s ease-out, transform .4s linear
+
 .bookshelf
     position: relative
     display: flex
@@ -208,42 +259,42 @@ main
         color: $red
         border-left: 4px solid lighten($black, 10%)
 
-.pages-container
-    // display: none
-    display: flex
-    align-items: center
-    justify-content: space-around
-    background: red
-    position: relative
-    width: 100vw
-    height: 100vh
-    top: -100vh
-    left: 0
-    z-index: 100
-    // height: calc(100vh + 100vh + 100vh)
-    // top: calc(-100vh - 100vh)
-    // left: 0
-    // background: rgba(0, 0, 0, .3)
-    .backdrop
-        // display: none
-        position: absolute
-        width: 100%
-        height: calc(100% + 100vh + 100vh)
-        top: -100vh
-        left: 0
-        background: rgba(0, 0, 0, .2)
-        z-index: 99
-    .pages-slider
-        display: flex
-        height: 100%
-        width: 600px
-        overflow: hidden
-        margin: auto
-        .page
-            min-width: 600px
-            height: 100%
-            background: $white
-            border: 1px solid black
+// .pages-container
+//     // display: none
+//     display: flex
+//     align-items: center
+//     justify-content: space-around
+//     background: red
+//     position: relative
+//     width: 100vw
+//     height: 100vh
+//     top: -100vh
+//     left: 0
+//     z-index: 100
+//     // height: calc(100vh + 100vh + 100vh)
+//     // top: calc(-100vh - 100vh)
+//     // left: 0
+//     // background: rgba(0, 0, 0, .3)
+//     .backdrop
+//         // display: none
+//         position: absolute
+//         width: 100%
+//         height: calc(100% + 100vh + 100vh)
+//         top: -100vh
+//         left: 0
+//         background: rgba(0, 0, 0, .2)
+//         z-index: 99
+//     .pages-slider
+//         display: flex
+//         height: 100%
+//         width: 600px
+//         overflow: hidden
+//         margin: auto
+//         .page
+//             min-width: 600px
+//             height: 100%
+//             background: $white
+//             border: 1px solid black
     
             
             
