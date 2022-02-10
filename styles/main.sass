@@ -52,6 +52,15 @@ header
 
 .bej
     background: $bej !important
+
+.display-block
+    display: block !important
+
+.display-flex
+    display: flex !important  
+
+.overflow
+    overflow: hidden !important 
 main
     padding: 8rem 0
     // background: linear-gradient($black 5%, $dark-gray 10%, $white 20%)
@@ -199,14 +208,38 @@ main
             cursor: pointer
             transition: opacity .4s ease-out, transform .4s linear
 
-.bookshelf
+#book-info
+    margin: 1rem
+    font-weight: 700
+    font-size: 1.5rem
+    color: $red
+    text-transform: uppercase
+
+.book-pages__section
     position: relative
+    width: 100%
+    height: 100vh
+    border-top: 4px solid $black
+    border-bottom: 4px solid $black
+    // margin: 6rem 0
+    .backdrop
+        display: none
+        position: absolute
+        width: calc(100% + 1rem)
+        height: calc(100vh + 100vh + 100vh)
+        transform: translateY(-50%)
+        background: rgba(0, 0, 0, .3)
+        z-index: 100
+
+.bookshelf
+    position: absolute
     display: flex
     align-items: flex-end
-    // padding: 0 2rem
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
     width: 90%
     height: 300px
-    margin: 6rem auto
     background: $woodBrown
     border: 1.3rem solid $woodFrameBrown
     border-radius: .2rem
@@ -259,44 +292,49 @@ main
         color: $red
         border-left: 4px solid lighten($black, 10%)
 
-// .pages-container
-//     // display: none
-//     display: flex
-//     align-items: center
-//     justify-content: space-around
-//     background: red
-//     position: relative
-//     width: 100vw
-//     height: 100vh
-//     top: -100vh
-//     left: 0
-//     z-index: 100
-//     // height: calc(100vh + 100vh + 100vh)
-//     // top: calc(-100vh - 100vh)
-//     // left: 0
-//     // background: rgba(0, 0, 0, .3)
-//     .backdrop
-//         // display: none
-//         position: absolute
-//         width: 100%
-//         height: calc(100% + 100vh + 100vh)
-//         top: -100vh
-//         left: 0
-//         background: rgba(0, 0, 0, .2)
-//         z-index: 99
-//     .pages-slider
-//         display: flex
-//         height: 100%
-//         width: 600px
-//         overflow: hidden
-//         margin: auto
-//         .page
-//             min-width: 600px
-//             height: 100%
-//             background: $white
-//             border: 1px solid black
-    
-            
+.pages-section
+    position: absolute
+    display: none
+    flex-direction: column
+    justify-content: center
+    height: 100%
+    width: 340px
+    margin-left: 50%
+    transform: translateX(-50%)
+    overflow: hidden
+    z-index: 101
+    .pages-slider
+        display: flex
+        height: 90%
+        width: 340px
+        margin: auto
+        img
+            height: 100%
+            min-width: 340px
+    .pages-buttons
+        display: flex
+        .page-button
+            font-weight: 700
+            font-size: 3rem
+            margin: auto
+            padding: .5rem
+            color: $black
+            user-select: none
+            cursor: pointer
+
+footer
+    background: $black
+    color: $white
+    padding: 2rem 0
+    line-height: 2
+    text-align: center
+    p
+        font-weight: 700
+        span
+            font-weight: 400
+    a
+        color: $orange
+        text-decoration: none
             
 // https://css-tricks.com/almanac/properties/b/border-image/
 
