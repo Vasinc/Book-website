@@ -338,6 +338,122 @@ footer
             
 // https://css-tricks.com/almanac/properties/b/border-image/
 
+@media  ( max-width: 1060px )
+    body
+        main
+            .reasons-card__section
+                h2
+                    text-align: center
+                .reasons-cards
+                    flex-direction: column
+                    gap: 1rem
+            .curiosity-cards__section
+                h2
+                    text-align: center
+                .curiosity-cards
+                    flex-direction: column
+                    gap: 1rem
+
+@media ( max-width: 800px)
+    body
+        main
+            .info-section
+                flex-direction: column
+                gap: 2rem
+            .book-pages__section
+                .bookshelf
+                    .sapiens
+                        display: none
+                    .noaptea
+                        display: none
+
+@media ( max-width: 600px) 
+    body
+        main
+            .book-pages__section
+                .bookshelf
+                    .NeuroFitness
+                        display: none
+
+@media ( max-width: 500px)
+    body
+        header
+            h1
+                font-size: 2rem
+            img
+                width: 200px
+        main
+            #book-info
+                font-size: 1.25rem
+
+@media ( max-width: 450px)
+    body
+        main
+            .info-section
+                .book
+                    width: 200px
+                .author
+                    width: 200px
+            .reasons-card__section
+                .reasons-cards
+                    .reason-card
+                        height: auto
+            .curiosity-cards__section
+                .curiosity-cards
+                    .curiosity-card
+                        height: auto
+            .quotes-section
+                .quotes-info
+                    flex-direction: column
+                    .info-text
+                        width: auto
+            .book-pages__section
+                .bookshelf
+                    .somn
+                        display: none
+                    .bogat
+                        display: none
+
+@media (max-width: 400px)
+    body
+        main
+            .info-section
+                width: 200px
+                .book
+                    margin-left: 200px
+                    .book-title
+                        width: 200px
+                    .book-info
+                        width: 200px
+                .author
+                    .author-title
+                        width: 200px
+                    .author-info
+                        width: 200px
+
+@media (max-width: 300px)
+    body
+        header
+            h1
+                font-size: 1.5rem
+            img
+                width: 150px
+        main
+            .info-section
+                width: 150px
+                .book
+                    .book-title
+                        width: 150px
+                    .book-info
+                        width: 150px
+                .author
+                    .author-title
+                        width: 150px
+                    .author-info
+                        width: 150px
+
+
+            
 @keyframes left-to-right 
     0%
         transform: rotate(0deg)
