@@ -41,6 +41,8 @@ header {
 
 header h1 {
   color: #fff;
+  text-transform: uppercase;
+  font-style: italic;
   font-size: 2.75rem;
   color: #d37638;
   -webkit-user-select: none;
@@ -140,8 +142,10 @@ main .info-section .book, main .info-section .author {
   transition: opacity .4s ease-out, transform .4s linear, -webkit-transform .4s linear;
 }
 
-main .info-section .book .book-title, main .info-section .author .book-title {
+main .info-section .book .book-title, main .info-section .author .book-title, main .info-section .author .author-title {
   padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 main .info-section .author {
@@ -149,8 +153,9 @@ main .info-section .author {
           transform: translateX(50px);
 }
 
-main .info-section .author .author-title {
-  padding-bottom: 1rem;
+.highlight {
+  color: #ff0000;
+  font-weight: 700;
 }
 
 .reasons-card__section {
@@ -607,10 +612,19 @@ main .info-section .author .author-title {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #000;
   color: #fff;
   padding: 2rem 0;
-  line-height: 2;
+  line-height: 2.25;
   text-align: center;
 }
 
@@ -622,9 +636,30 @@ footer p span {
   font-weight: 400;
 }
 
-footer a {
-  color: #f3c83d;
+footer .school-section a {
+  text-decoration: underline;
+  color: white;
+  font-size: 1.25rem;
+}
+
+footer .school-section a img {
+  -webkit-transform: translateX(32%);
+          transform: translateX(32%);
+}
+
+footer .school-section span {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+footer .people-section a {
+  color: #cccccc;
   text-decoration: none;
+}
+
+footer .people-section h3 .a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 @media (max-width: 1060px) {
@@ -663,6 +698,12 @@ footer a {
   }
   body main .book-pages__section .bookshelf .noaptea {
     display: none;
+  }
+  body footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -721,7 +762,7 @@ footer a {
   body main .info-section .book, body main .info-section .author {
     margin-left: 200px;
   }
-  body main .info-section .book .book-title, body main .info-section .author .book-title {
+  body main .info-section .book .book-title, body main .info-section .author .book-title, body main .info-section .author .author-title {
     width: 200px;
   }
   body main .info-section .book .book-info, body main .info-section .author .book-info {
@@ -745,7 +786,7 @@ footer a {
   body main .info-section {
     width: 150px;
   }
-  body main .info-section .book .book-title, body main .info-section .author .book-title {
+  body main .info-section .book .book-title, body main .info-section .author .book-title, body main .info-section .author .author-title {
     width: 150px;
   }
   body main .info-section .book .book-info, body main .info-section .author .book-info {
