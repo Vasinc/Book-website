@@ -13,6 +13,7 @@ const pagesSlider = document.querySelector('.pages-slider');
 const pagesLeftBtn = document.querySelector('.page-button__left');
 const pagesRightBtn = document.querySelector('.page-button__right');
 
+
 const sectionOptions = {
     threshold: .5
 }
@@ -78,6 +79,7 @@ function togglePages () {
 
 book.addEventListener('click', () => {
     togglePages();
+    pagesSection.scrollIntoView();
 });
 
 backdrop.addEventListener('click', () => {

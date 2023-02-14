@@ -1,6 +1,6 @@
 @import './imports'
 
-
+// resets
 *, *::before, *::after
     margin: 0
     padding: 0
@@ -14,30 +14,8 @@ body
     font-size: 100%
     box-sizing: border-box
     overflow-x: hidden
-    
-header
-    @include flex(center, space-evenly, column)
-    height: 100vh
-    width: calc( 100% + 1rem )
-    background: $black
-    h1
-        color: $white
-        text-transform: uppercase
-        font-style: italic
-        font-size: 2.75rem
-        color: #d37638
-        user-select: none
-    img
-        background: rgba(248, 234, 33, .2)
-        border-radius: 1rem
-        box-shadow: 0 0 40px 20px rgba(248, 234, 33, .2)
-        transition: transform 350ms ease-out, padding 350ms ease-out
-        &:hover
-            background: rgba(248, 234, 33, .4)
-            transform: scale(1.05)
-            // box-shadow: 0 0 40px 20px rgba(248, 234, 33, .6)
-            padding: 1rem
 
+// classes
 .appear-side
     opacity: 1 !important
     transform: translateX(0) !important
@@ -63,9 +41,34 @@ header
 
 .overflow
     overflow: hidden !important 
+
+// actual styling
+    
+header
+    @include flex(center, space-evenly, column)
+    height: 100vh
+    width: calc( 100% + 1rem )
+    background: $black
+    h1
+        color: $white
+        text-transform: uppercase
+        font-style: italic
+        font-size: 2.75rem
+        color: #d37638
+        user-select: none
+    img
+        background: rgba(248, 234, 33, .2)
+        border-radius: 1rem
+        box-shadow: 0 0 40px 20px rgba(248, 234, 33, .2)
+        transition: transform 350ms ease-out, padding 350ms ease-out
+        &:hover
+            background: rgba(248, 234, 33, .4)
+            transform: scale(1.05)
+            padding: 1rem
+
+
 main
     padding: 8rem 0
-    // background: linear-gradient($black 5%, $dark-gray 10%, $white 20%)
     .info-section
         @include flex(center, space-around, row)
         .book
@@ -220,16 +223,15 @@ main
     margin: 1rem
     font-weight: 700
     font-size: 1.5rem
-    color: $red
+    color: $black
     text-transform: uppercase
+    text-align: center
 
 .book-pages__section
     position: relative
     width: 100%
     height: 100vh
     border-top: 4px solid $black
-    border-bottom: 4px solid $black
-    // margin: 6rem 0
     .backdrop
         display: none
         position: absolute
@@ -361,8 +363,7 @@ footer
             .a
                 color: $white
                 text-decoration: underline
-            
-// https://css-tricks.com/almanac/properties/b/border-image/
+        
 
 @media  ( max-width: 1060px )
     body
@@ -409,10 +410,15 @@ footer
             h1
                 font-size: 2rem
             img
-                width: 200px
+                width: 40%
         main
             #book-info
                 font-size: 1.25rem
+        footer
+            .school-section
+                a
+                    img
+                        width: 50%
 
 @media ( max-width: 450px)
     body
